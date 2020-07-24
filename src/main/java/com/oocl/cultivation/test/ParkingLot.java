@@ -12,6 +12,6 @@ public class ParkingLot {
     }
 
     public Car fetch(CarTicket carTicket) {
-        return null;
+        return parkingRooms.get(carTicket);
     }
 }
