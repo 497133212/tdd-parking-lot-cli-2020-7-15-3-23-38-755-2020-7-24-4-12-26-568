@@ -122,4 +122,21 @@ public class ParkingLotTest {
         assertNull(noCar);
     }
 
+    @Test
+    void should_return_no_ticket_when_parking_lot_reach_max_capacity_given_car() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        for(int i=1;i<=10;i++) {
+            Car car = new Car();
+            parkingLot.park(car);
+        }
+        Car parkCar = new Car();
+
+        //when
+        CarTicket carTicket = parkingLot.park(parkCar);
+
+        //then
+        assertNull(carTicket);
+    }
+
 }
