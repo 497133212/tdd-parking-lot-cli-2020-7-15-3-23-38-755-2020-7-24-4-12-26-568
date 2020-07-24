@@ -35,4 +35,24 @@ public class ParkingLotTest {
         assertEquals(car, fetchCar);
 
     }
+
+    @Test
+    void should_paking_multiple_car_when_park_given_car() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        Car firstCar = new Car();
+        Car secondCar = new Car();
+        Car thirdCar = new Car();
+
+        //when
+        CarTicket firstCarTicket = parkingLot.park(firstCar);
+        CarTicket secondCarTicket = parkingLot.park(secondCar);
+        CarTicket thirdCarTicket = parkingLot.park(thirdCar);
+
+
+        //then
+        assertNotNull(firstCarTicket);
+        assertNotNull(secondCarTicket);
+        assertNotNull(thirdCarTicket);
+    }
 }
