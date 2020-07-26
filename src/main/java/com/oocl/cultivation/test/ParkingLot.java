@@ -20,6 +20,10 @@ public class ParkingLot {
         return message;
     }
 
+    public Map<CarTicket, Car> getParkingRooms() {
+        return parkingRooms;
+    }
+
     public CarTicket park(Car car) {
         if (parkingRooms.size() >= capacity) {
             this.message = "Not enough position.";
@@ -32,7 +36,7 @@ public class ParkingLot {
 
     public Car fetch(CarTicket carTicket) {
         Car car = parkingRooms.remove(carTicket);
-        if(car == null) {
+        if (car == null) {
             this.message = "Unrecognized parking ticket.";
         }
         return car;

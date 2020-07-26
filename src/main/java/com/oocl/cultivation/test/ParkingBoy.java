@@ -1,12 +1,14 @@
 package com.oocl.cultivation.test;
 
+import java.util.List;
+
 public class ParkingBoy {
-    private ParkingLot parkingLot;
+    private List<ParkingLot> parkingLots;
     private String message;
 
 
-    public ParkingBoy(ParkingLot parkingLot) {
-        this.parkingLot = parkingLot;
+    public ParkingBoy(List<ParkingLot> parkingLots) {
+        this.parkingLots = parkingLots;
     }
 
     public String getMessage() {
@@ -14,12 +16,23 @@ public class ParkingBoy {
     }
 
     public CarTicket park(Car car) {
-        return this.parkingLot.park(car);
+        int i = 0;
+        ParkingLot parkingLot = this.parkingLots.get(i);
+        if(parkingLot.getParkingRooms().size()>=10) {
+            ++i;
+            parkingLot = this.parkingLots.get(i);
+        }
+        return parkingLot.park(car);
     }
+
     public Car fetch(CarTicket carTicket) {
-        if(carTicket == null) {
+        if (carTicket == null) {
             this.message = "Please provide your parking ticket.";
         }
-        return this.parkingLot.fetch(carTicket);
+        Car car = null;
+        for (ParkingLot parkingLot : parkingLots) {
+            car = parkingLot.fetch(carTicket);
+        }
+        return car;
     }
 }
