@@ -15,10 +15,14 @@ public class ParkingBoy {
         return message;
     }
 
+    public List<ParkingLot> getParkingLots() {
+        return parkingLots;
+    }
+
     public CarTicket park(Car car) {
         int i = 0;
         ParkingLot parkingLot = this.parkingLots.get(i);
-        if(parkingLot.getParkingRooms().size()>=10) {
+        if (parkingLot.getParkingRooms().size() >= 10) {
             ++i;
             parkingLot = this.parkingLots.get(i);
         }
