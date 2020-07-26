@@ -19,15 +19,15 @@ public class SmartParkingBoyTest {
         parkingLots.add(parkingLotA);
         parkingLots.add(parkingLotB);
         parkingLots.add(parkingLotC);
-        for(int i=1;i<=6;i++) {
+        for (int i = 1; i <= 6; i++) {
             Car car = new Car();
             parkingLotA.park(car);
         }
-        for(int j=1;j<=4;j++) {
+        for (int j = 1; j <= 4; j++) {
             Car car = new Car();
             parkingLotB.park(car);
         }
-        for(int j=1;j<=8;j++) {
+        for (int j = 1; j <= 8; j++) {
             Car car = new Car();
             parkingLotC.park(car);
         }
@@ -39,6 +39,5 @@ public class SmartParkingBoyTest {
 
         //then
         assertNotNull(carTicket);
-
     }
 }
