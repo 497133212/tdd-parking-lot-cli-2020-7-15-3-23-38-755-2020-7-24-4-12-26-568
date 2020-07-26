@@ -2,6 +2,7 @@ package com.oocl.cultivation.test;
 
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ParkingLotTest {
@@ -62,5 +63,19 @@ public class ParkingLotTest {
 
         //then
         assertNull(carTicket);
+    }
+
+    @Test
+    void should_print_error_message_when_fetch_car_from_parking_lot_given_wrong_ticket() {
+        //given
+        ParkingLot parkingLot = new ParkingLot(10);
+        CarTicket carTicket = new CarTicket();
+        parkingLot.fetch(carTicket);
+
+        //when
+        String errorMessage = parkingLot.getMessage();
+
+        //then
+        assertEquals("Unrecognized parking ticket", errorMessage);
     }
 }
