@@ -18,7 +18,7 @@ public class SuperSmartParkingBoyTest {
         List<ParkingLot> parkingLots = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             Car car = new Car();
-            CarTicket c = parkingLotA.park(car);
+            parkingLotA.park(car);
         }
         for (int j = 1; j <= 9; j++) {
             Car car = new Car();
