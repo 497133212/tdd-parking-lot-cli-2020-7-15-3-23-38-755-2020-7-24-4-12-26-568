@@ -3,6 +3,7 @@ package com.oocl.cultivation.test;
 import java.util.List;
 
 public class ParkingBoy {
+    private static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
     private List<ParkingLot> parkingLots;
     private String message;
 
@@ -31,7 +32,7 @@ public class ParkingBoy {
 
     public Car fetch(CarTicket carTicket) {
         if (carTicket == null) {
-            this.message = "Please provide your parking ticket.";
+            this.message = PLEASE_PROVIDE_YOUR_PARKING_TICKET;
         }
         Car car = null;
         for (ParkingLot parkingLot : parkingLots) {
