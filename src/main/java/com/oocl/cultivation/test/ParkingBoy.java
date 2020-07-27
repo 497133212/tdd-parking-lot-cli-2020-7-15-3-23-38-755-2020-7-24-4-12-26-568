@@ -33,10 +33,14 @@ public class ParkingBoy {
     public Car fetch(CarTicket carTicket) {
         if (carTicket == null) {
             this.message = PLEASE_PROVIDE_YOUR_PARKING_TICKET;
+            return null;
         }
         Car car = null;
         for (ParkingLot parkingLot : parkingLots) {
             car = parkingLot.fetch(carTicket);
+            if(parkingLot.getMessage() != null) {
+                this.message = parkingLot.getMessage();
+            }
         }
         return car;
     }
